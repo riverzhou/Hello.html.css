@@ -1,3 +1,8 @@
+div.main {
+  width: 180px;
+  background-color: rgb(243, 243, 243);
+}
+
 .content {
   color: #4d6dad;
   transition: 0.5s ease;
@@ -15,6 +20,7 @@
 
 .name:hover {
   color: red;
+  cursor: pointer;
 }
 
 div.content {
@@ -40,14 +46,36 @@ li .name {
 
 .group:hover .list {
   display: block;
-  animation: showList 1s;
+  animation: showList 2s;
+}
+
+.group .list2 {
+  display: none;
+}
+
+.group:hover .list2 {
+  display: block;
+  animation: showList2 2s;
 }
 
 @keyframes showList {
   from {
-    color: white;
+    opacity: 0;
+    transform: scale(0);
   }
   to {
-    color: #4d6dad;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes showList2 {
+  from {
+    opacity: 0;
+    transform: translate(30%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
   }
 }
