@@ -187,5 +187,5 @@ for line in sourceMD.split('\n'):
         mdCode, emojiCode = line.split('|')
         listDEC = emojiCode.strip().encode(encoding='unicode-escape').decode().upper().lstrip('\\').split('\\')
         htmlCode = ''.join(map(lambda x: '&#x{};'.format(x.lstrip('U').lstrip('0').strip()), listDEC))
-        md = '{}|`{}`|{}'.format(mdCode.strip(), htmlCode, emojiCode.strip())
+        md = '{}|`{}`|{}|{}'.format(mdCode.strip(), htmlCode, mdCode.strip().strip('`'),emojiCode.strip())
         print(md)
